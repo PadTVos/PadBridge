@@ -67,10 +67,10 @@ retries an abnormal process exit once; unsupported APIs do not restart-loop.
 
 ## PadTV ecosystem
 
-[OS](https://github.com/PadTVos/PadTV-OS) Â·
-[Updates](https://github.com/PadTVos/PadTV-Updates) Â·
-[Store](https://github.com/PadTVos/PadTV-Store) Â·
-[Apps](https://github.com/PadTVos/PadTV-Apps) Â·
+[OS](https://github.com/PadTVos/PadTV-OS) ·
+[Updates](https://github.com/PadTVos/PadTV-Updates) ·
+[Store](https://github.com/PadTVos/PadTV-Store) ·
+[Apps](https://github.com/PadTVos/PadTV-Apps) ·
 [Website/docs](https://github.com/PadTVos/PadTV-Website)
 
 Own code: Apache-2.0. Dependencies retain their respective licenses. Test APK
