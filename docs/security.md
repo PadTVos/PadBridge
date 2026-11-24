@@ -32,4 +32,3 @@ Uninstall offers preserving or deleting data. No Waydroid directory is touched.
 modify their own files; these checks are not a defense against a compromised
 host account or administrator. APK signer identity is not an assertion that an
 app is trustworthy, published by Google, or certified.
-

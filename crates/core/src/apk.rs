@@ -165,7 +165,12 @@ pub fn inspect(path: &Path) -> Result<App> {
     ensure!(valid_package(&package), "Invalid package identifier");
     let activity_line = badging
         .lines()
-        .find(|l| l.starts_with("launchable-activity:"));
+        .find(|l| l.starts_with("launchable-activity:"))
+        .or_else(|| {
+            badging
+                .lines()
+                .find(|l| l.starts_with("leanback-launchable-activity:"))
+        });
     let activity = activity_line
         .and_then(|l| field(l, "name"))
         .unwrap_or_default();
@@ -215,7 +220,7 @@ pub fn inspect(path: &Path) -> Result<App> {
         abis,
         icon,
         television: badging.contains("android.software.leanback")
-            || badging.contains("leanback-launcher"),
+            || badging.contains("leanback-launchable-activity"),
     })
 }
 

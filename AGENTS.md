@@ -11,4 +11,3 @@ and `python3 tests/integration.py`. Keep API and compatibility documentation
 consistent with the tested implementation. No signing keys or third-party APKs
 belong in this repository. Changes to DRM may not bypass licensing or access
 controls. Keep source provenance and dependency licenses documented.
-

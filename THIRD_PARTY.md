@@ -18,4 +18,3 @@ license texts for Debian packages are available from Debian source repositories;
 when distributing modified dependencies, publish the corresponding modified
 source and satisfy the applicable license. No proprietary Google/Netflix APK,
 DRM module, signing key, certificate or Google Play binary is in this repository.
-

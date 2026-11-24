@@ -109,7 +109,7 @@ def build():
         if not path.exists():run('keytool','-genkeypair','-keystore',str(path),'-storepass','testonly','-keypass','testonly','-alias','fixture','-keyalg','RSA','-keysize','2048','-validity','3650','-dname','CN=PadBridge Test Only')
     variants=[('basic',1,'test',None),('update',2,'test',None),('wrong-signer',2,'other',None),
         ('network',1,'test',NETWORK),('isolation',1,'test',ISOLATION),('crash',1,'test',CRASH),
-        ('media',1,'test',MEDIA),('audio',1,'test',AUDIO),('native',1,'test',None)]
+        ('media',1,'test',MEDIA),('audio',1,'test',AUDIO),('native',1,'test',None),('tvonly',1,'test',None)]
     for name,version,key,body in variants:
         work=OUT/name;work.mkdir(exist_ok=True)
         src=work/'smali';src.mkdir(exist_ok=True)
@@ -125,6 +125,9 @@ def build():
 <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28"/>{permissions}
 <uses-feature android:name="android.software.leanback" android:required="false"/>
 <application android:label="PadBridge {name}" android:icon="@drawable/icon"><activity android:name="org.padtv.fixture.Main" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/><category android:name="android.intent.category.LEANBACK_LAUNCHER"/></intent-filter></activity></application></manifest>''')
+        if name=='tvonly':
+            manifest=work/'AndroidManifest.xml'
+            manifest.write_text(manifest.read_text().replace('<category android:name="android.intent.category.LAUNCHER"/>',''))
         run('java','-jar','/usr/share/java/smali.jar','assemble',str(src),'--api','23','-o',str(work/'classes.dex'))
         run('aapt','package','-f','-M',str(work/'AndroidManifest.xml'),'-I','/usr/share/android-framework-res/framework-res.apk','-S',str(work/'res'),'-A',str(work/'assets'),'-F',str(work/'unsigned.apk'))
         with zipfile.ZipFile(work/'unsigned.apk','a') as apk:

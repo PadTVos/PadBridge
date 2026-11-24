@@ -37,4 +37,3 @@ and content. [Netflix device certification guidance](https://help.netflix.com/en
 and [Ultra HD requirements](https://help.netflix.com/en/node/13444) must be checked
 with the vendor during commercial integration. Do not copy device certificates,
 spoof device identity, export keys or bypass license restrictions.
-

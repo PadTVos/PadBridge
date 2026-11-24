@@ -28,4 +28,3 @@ not simulated service implementations. Arbitrary native libraries, layouts,
 resource IDs, notifications, intents, WebView, Google Play Services, codecs and
 DRM are not supported. This is an experimental implementation of these methods,
 not Android CTS compliance.
-

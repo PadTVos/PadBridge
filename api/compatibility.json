@@ -15,4 +15,3 @@
     "Android native libraries/Bionic", "ARM64 translation", "MediaCodec", "AudioTrack", "MediaDrm", "Google Play Services",
     "Leanback widgets", "BluetoothAdapter", "WifiManager", "PowerManager", "multi-Activity navigation"]
 }
-

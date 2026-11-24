@@ -5,12 +5,15 @@ OpenJDK 21, SDL2 and the pinned Cargo.lock. PadBridge's version does not claim
 completion of later roadmap milestones.
 
 - Six Rust unit tests cover bounded metadata input and native input/hierarchy helpers.
-- Signed-APK integration tests execute in a QEMU/KVM PadTV guest as an ordinary
+- Fourteen signed-APK integration tests execute in a QEMU/KVM PadTV guest as an ordinary
   user with bubblewrap. The tests do not skip or disable the sandbox.
 - Original APK bytes and signers, tampering, version rollback, different signer,
   private data preservation, removal, DEX arithmetic, Activity, asset image,
   private storage, D-pad click, denied/granted HTTP network access, host path
   isolation and bounded crash recovery are exercised.
+- A Leanback-only launcher is detected and run; native ELF machine/dependencies
+  are reported, then native execution is rejected. Corrupt installed metadata
+  cannot be used to replace the recorded APK signer.
 - A real Wayland window displayed the fixture's text and PNG; virtual keyboard
   Enter invoked the APK's Android OnClickListener and changed the text.
 - AudioTrack and MediaCodec fixtures verify explicit unsupported diagnostics;

@@ -82,9 +82,16 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(library['elf_machine'],62)
         self.assertIn('libc.so.6',library['needed'])
         app=self.install('native');self.call('run',app['package'],'--headless',ok=False)
+    def test_leanback_only_launcher(self):
+        app=self.install('tvonly');self.assertTrue(app['television']);self.assertEqual(app['activity'],'org.padtv.fixture.Main')
+        self.assertIn('DEX_ACTIVITY_STORAGE_OK',self.call('run',app['package'],'--headless')['output'])
     def test_integrity_and_unrequested_permission(self):
         app=self.install();self.call('permissions',app['package'],'["android.permission.INTERNET"]',ok=False)
         apk=self.data/'packages'/app['package']/app['sha256']/'original.apk';apk.write_bytes(b'corrupt')
         self.call('run',app['package'],'--headless',ok=False)
+    def test_damaged_metadata_cannot_replace_signer(self):
+        app=self.install();(self.data/'packages'/app['package']/'current.json').write_text('{')
+        result=self.call('install',self.fixtures/'wrong-signer.apk',ok=False)
+        self.assertIn('metadata is damaged',result['error'])
 
 if __name__=='__main__':unittest.main(verbosity=2)

@@ -54,6 +54,7 @@ retries an abnormal process exit once; unsupported APIs do not restart-loop.
 - [Sandbox and data model](docs/security.md)
 - [Secure Media Engine roadmap](docs/secure-media.md)
 - [Other distributions](docs/integration.md)
+- [Verification record](docs/validation.md)
 
 ## PadTV ecosystem
 
@@ -65,4 +66,3 @@ retries an abnormal process exit once; unsupported APIs do not restart-loop.
 
 Own code: Apache-2.0. Dependencies retain their respective licenses. Test APK
 source is included; throwaway signing keys are generated locally and ignored.
-

@@ -58,4 +58,3 @@ Native ABI support requires a reviewed Bionic/linker bridge before ARM64
 translation. MediaCodec then maps to capability-tested FFmpeg/VA-API/Vulkan
 Video; AudioTrack to PipeWire. None of these planned adapters returns fake
 success today.
-

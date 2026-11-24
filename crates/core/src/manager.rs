@@ -94,7 +94,10 @@ impl Manager {
         std::io::copy(&mut File::open(source)?.take(apk::MAX_APK + 1), &mut copy)?;
         let app = apk::inspect(copy.path())?;
         let _guard = self.operation_lock(&app.package)?;
-        if let Ok(old) = self.get(&app.package) {
+        if self.app_dir(&app.package)?.join("current.json").exists() {
+            let old = self
+                .get(&app.package)
+                .context("Installed metadata is damaged; refusing to replace signer identity")?;
             ensure!(
                 old.signers == app.signers,
                 "APK signer differs from installed package; key rotation is not yet supported"

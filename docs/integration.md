@@ -19,4 +19,3 @@ must provide working user namespaces and a real Wayland socket; execution on
 Windows is unsupported. Windows PadTV development preview remains a separate
 UI function. ARM Linux builds and Android ARM APK execution are distinct tasks,
 neither is verified in this release.
-
