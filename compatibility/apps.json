@@ -5618,7 +5618,7 @@
       "report": "reports-0.5/org.jellyfin.androidtv.json"
     },
     {
-      "package": "org.padtv.fixture.art",
+      "package": "org.padtv.artprobe",
       "source": "tests/build_art_fixtures.py",
       "status": "tested-original-dex-and-wayland",
       "tested_runtime": "0.5.0 aosp-art",

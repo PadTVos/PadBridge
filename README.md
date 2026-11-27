@@ -3,7 +3,7 @@
 PadBridge installs **unmodified, signed APKs and verified split APK sets** and executes a small
 subset of Android applications directly on Linux. Its package manager,
 supervisor, diagnostics and native rendering bridge are Rust. Java facades
-implement the supported Android API signatures. No Android OS, VM or Waydroid
+implement the supported Android API signatures. No virtual Android device, Android OS or Waydroid
 is started. This release accompanies **PadTV OS 0.8**; the two version numbers
 describe different projects.
 
